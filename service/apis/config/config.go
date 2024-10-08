@@ -6,30 +6,21 @@ import (
 )
 
 type AppConfig struct {
-	server       *serverConfig
-	commonConfig *commonConfig
+	server *serverConfig
 }
-
-var appConfig *AppConfig
 
 func NewAppConfig() *AppConfig {
 
+	// understood serverconfig
 	serverConfig, err := newServerConfig()
 	if err != nil {
 		fmt.Println(err)
+		//here we are using syscall.exit but in routes.go we are using os.exit why?
 		syscall.Exit(1)
 	}
 
-	commonConfig, err := newCommonConfig()
-	if err != nil {
-		fmt.Println(err)
-		syscall.Exit(1)
+	return &AppConfig{
+		server: serverConfig,
 	}
 
-	appConfig = &AppConfig{
-		server:       serverConfig,
-		commonConfig: commonConfig,
-	}
-
-	return appConfig
 }

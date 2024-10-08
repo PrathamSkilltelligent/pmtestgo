@@ -6,7 +6,6 @@ import (
 )
 
 const (
-	PASSPHRASE         = "PASSPHRASE"
 	JWT_ISSUER         = "JWT_ISSUER"
 	JWT_SECRET         = "JWT_SECRET"
 	JWT_PRIVATE_SECRET = "JWT_PRIVATE_SECRET"
@@ -19,7 +18,7 @@ const (
 	DB_NAME     = "DB_NAME"
 
 	ENVIRONMENT = "ENVIRONMENT"
-	APP_PORT    = "SERVER_PORT"
+	APP_PORT    = "APP_PORT"
 
 	LOG_HOST = "LOG_HOST"
 
